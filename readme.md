@@ -2,10 +2,40 @@
 
 ## Technologies
 
-- NET 7.0
+- React + TypeScript for front end
+- NET 7.0 for backend
 - Entity Framework Core 7.0
 - Microsoft.AspNetCore.Identity
-- Bootstrap 4.x
+
+## Why React
+
+- Net Core and React is top most loved by web developer. Facebook use it (they make it), Netflix use it, Instagram use it
+- Easy to learn. Because it just a library, not a framework. So we dont need to know something like packages and state management system
+- Run very fast. Because React use a virtual DOM that contains a representation of actual DOM that browser used. So any state change we make in our application will not cause the actual DOM to be repainted. React is smart enough to just update the part of the DOM that need updating and maintains a representation of the DOM in memory (While if we use JQuery, jquery will update the whole DOM directly)
+- It's small, and it just JavaScript. TypeScript is just some features that we need to learn
+
+## Why TypeScript
+
+- Strong typing,
+- Object oriented,
+- Better intellisense,
+- Access modifiers,
+- Silly mistakes in develop
+- Future JS features,
+- Easy to learn
+- Much imporve react application...
+
+## React Component
+
+- A normal web application use alot of pagesuse: one or many HTML files, 1 or many js files and one or many Css files
+- A normal react application use only one page (single page).
+- Each page of react application should be built over a number of components. And each components should contained things that contains the code to render HTML. Make it very portable
+- Each component can have it own State. And state of this component (what it's tracking) can be passed down as properties (Props)
+- We can also pass down functions from parent components to child component that affect states of parent components
+
+## React Hooks
+
+- import React, { useState(), useEffect() }
 
 ## Install Tools
 
@@ -29,9 +59,22 @@
 - Persistence
   1. Domain
 
-## Command inneed
+## Command to create solution structure
 
-- dotnet add package Newtonsoft.Json --version 13.0.1
+- dotnet new sln -f net7.0 (for create solution file)
+- dotnet new webapi -n Api -f net7.0
+- dotnet new classlib -n [Application, Domain, Persistence] -f net7.0
+- dotnet sln add [Api, Application, Domain, Persistence]
+- npx create-react-app web-react --use-npm --template typescript
+
+## Command to run project
+
+- (at Ems/Api folder) dotnet run/watch run (then test it at: localhost:5000/swagger)
+- (at web-react folder) npm start (then test it at: localhost:3000)
+
+## Command to install package needed
+
+<!-- - dotnet add package Newtonsoft.Json --version 13.0.1
 - dotnet add package Swashbuckle.AspNetCore -v 6.4.0
 - dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.9
 - dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore --version 6.0.9
@@ -43,7 +86,7 @@
 - dotnet add package FluentValidation.AspNetCore --version 11.2.2
 - dotnet add package SSH.NET --version 2020.0.2
 - dotnet add package Autofac.Extensions.DependencyInjection --version 8.0.0
-- dotnet add package ClosedXML --version 0.97.0
+- dotnet add package ClosedXML --version 0.97.0 -->
 
 ## scaffold database models
 
