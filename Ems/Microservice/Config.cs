@@ -21,7 +21,5 @@ public class Config
             var logger = services.GetRequiredService<ILogger<Config>>();
             logger.LogError(ex, "An error occured during migrations");
         }
-
-        await host.RunAsync();
     }
 }
