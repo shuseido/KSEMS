@@ -21,7 +21,7 @@
 - Object oriented,
 - Better intellisense,
 - Access modifiers,
-- Silly mistakes in develop
+- Caching silly mistakes in develop
 - Future JS features,
 - Easy to learn
 - Much imporve react application...
