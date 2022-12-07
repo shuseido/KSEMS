@@ -18,8 +18,10 @@ public class Config
         }
         catch (Exception ex)
         {
-            var logger = services.GetRequiredService<ILogger<Config>>();
-            logger.LogError(ex, "An error occured during migrations");
+            // var logger = services.GetRequiredService<ILogger<Config>>();
+            // logger.LogError(ex, "An error occured during migrations");
+            // log something error
+            throw;
         }
     }
 }

@@ -14,14 +14,16 @@
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import consts from './consts';
 
-const HOST = 'http://localhost:5000/api/activities'; //microservice
-
-const [activities, setActitities] = useState([]);
-useEffect(() => {
-    axios.get(HOST).then((response) => {
-        setActitities(response.data);
-    });
-}, []);
-
-export default setActitities;
+export function fetchData(action: string): any {
+    const [data, setData] = useState([]);
+    const api = consts.API_HOST + action;
+    useEffect(() => {
+        axios.get(api).then((response) => {
+            console.log(response);
+            setData(response.data);
+        });
+    }, []);
+    return data;
+}

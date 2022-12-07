@@ -11,4 +11,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-export default () => {};
+
+const API_HOST = 'http://localhost:5000/api/';
+const IDENTITY_SERVER = 'http://localhost:5001';
+
+export default {
+    API_HOST: API_HOST,
+    IDENTITY_SERVER: IDENTITY_SERVER,
+};

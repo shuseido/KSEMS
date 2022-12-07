@@ -14,7 +14,7 @@ public class LogController : BaseApiController
         _context = context;
     }
 
-    [HttpGet]
+    [HttpGet(Name = "GetLogs")]
     public async Task<ActionResult<List<Log>>> Get()
     {
         return await _context.Logs.ToListAsync();
