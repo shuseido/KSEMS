@@ -16,7 +16,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import consts from './consts';
 
-export function fetchData(action: string): any {
+export function FetchData(action: string): any {
     const [data, setData] = useState([]);
     const api = consts.API_HOST + action;
     useEffect(() => {

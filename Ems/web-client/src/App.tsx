@@ -1,29 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { ducks } from './actions/demo';
-import DuckItem from './components/demo/DuckItem';
-import { fetchData } from './utils/ems-core';
+import { FetchData } from './utils/ems-core';
+import Title from 'antd/es/typography/Title';
+import { List } from 'antd';
 
 function App() {
     // usr axios to fetch data from api server
     // setLogs is a function to set logs with response data from api
     // to prevent endless loop (cause we define logs and setLogs in component) we just need to add a parameter as empty array in useEffect)
-    const logs = fetchData('log');
+    const logs = FetchData('log');
 
     return (
         <div className='App'>
-            <header className='App-header'>
-                <img src={logo} className='App-logo' alt='logo' />
-                {ducks.map((duck) => (
-                    <DuckItem key={duck.name} duck={duck} />
-                ))}
-                <ul>
-                    {logs.map((log: any) => (
-                        <li key={log.id}>{log.actionName}</li>
-                    ))}
-                </ul>
-            </header>
+            <Title level={2}> Hello React! </Title>
+            <List
+                itemLayout='horizontal'
+                dataSource={logs}
+                renderItem={(log: any) => (
+                    <List.Item>
+                        <List.Item.Meta key={log.id} title={log.actionName} description={log.category} />
+                    </List.Item>
+                )}
+            />
         </div>
     );
 }

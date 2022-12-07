@@ -21,7 +21,7 @@ public class Config
             // var logger = services.GetRequiredService<ILogger<Config>>();
             // logger.LogError(ex, "An error occured during migrations");
             // log something error
-            throw;
+            throw ex;
         }
     }
 }
